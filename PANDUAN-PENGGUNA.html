@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Buku Panduan - PT. Alfadh Berkah Haramain</title>
+    <style>
+        @page { size: A4; margin: 2cm; }
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .page {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .cover {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #1a5f2a 0%, #2e8b57 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        .cover h1 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .cover h2 { font-size: 1.5rem; font-weight: normal; opacity: 0.9; margin-bottom: 40px; }
+        .cover .logo-area {
+            width: 120px; height: 120px;
+            background: white; border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem;
+        }
+        .cover .meta {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 2;
+        }
+        h1 { color: #1a5f2a; border-bottom: 3px solid #2e8b57; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #2e8b57; margin-top: 30px; border-left: 4px solid #f39c12; padding-left: 15px; }
+        h3 { color: #444; margin-top: 25px; }
+        .toc { background: #f8fff8; padding: 25px; border-radius: 8px; border: 1px solid #2e8b57; }
+        .toc ul { list-style: none; padding-left: 0; }
+        .toc li { padding: 8px 0; border-bottom: 1px dotted #ddd; }
+        .toc a { color: #1a5f2a; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        th { background: #1a5f2a; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .note { background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px; margin: 15px 0; border-radius: 0 4px 4px 0; }
+        .tip { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 0 4px 4px 0; }
+        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 0 4px 4px 0; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 0.9em; }
+        .step { display: flex; margin: 15px 0; }
+        .step-num {
+            width: 36px; height: 36px;
+            background: #1a5f2a; color: white;
+            border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 15px; flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .screenshot-placeholder {
+            background: #e9ecef; border: 2px dashed #adb5bd;
+            padding: 40px; text-align: center; color: #6c757d;
+            margin: 15px 0; border-radius: 8px;
+        }
+        .role-badge {
+            display: inline-block; padding: 4px 12px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .admin { background: #dc3545; color: white; }
+        .sales { background: #007bff; color: white; }
+        ul, ol { margin: 10px 0; }
+        li { margin: 6px 0; }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<!-- HALAMAN SAMPUL -->
+<div class="page">
+    <div class="cover">
+        <div class="logo-area">🕋</div>
+        <h1>PT. ALFADH BERKAH HARAMAIN</h1>
+        <h2>Sistem Pemantauan Pembayaran Jamaah Umrah</h2>
+        <div style="width: 100px; height: 3px; background: rgba(255,255,255,0.5); margin: 30px auto;"></div>
+        <h3 style="margin-top: 40px; font-size: 1.8rem;">BUKU PANDUAN PENGGUNA</h3>
+        <p style="font-size: 1.1rem; opacity: 0.8;">Edisi 1.0 &mdash; Mei 2026</p>
+        <div class="meta">
+            <strong>Dokumentasi Teknis & Operasional</strong><br>
+            Untuk Admin, Sales, dan Tim IT<br>
+            Kompatibel dengan XAMPP / LAMPP / MAMP
+        </div>
+    </div>
+</div>
+
+<!-- DAFTAR ISI -->
+<div class="page">
+    <h1>Daftar Isi</h1>
+    <div class="toc">
+        <ul>
+            <li><strong>BAB I</strong> &mdash; Pengenalan Sistem</li>
+            <li><strong>BAB II</strong> &mdash; Instalasi di Windows (XAMPP)</li>
+            <li><strong>BAB III</strong> &mdash; Instalasi di macOS (MAMP)</li>
+            <li><strong>BAB IV</strong> &mdash; Instalasi di Linux (LAMPP)</li>
+            <li><strong>BAB V</strong> &mdash; Panduan Admin (Super User)</li>
+            <li><strong>BAB VI</strong> &mdash; Panduan Sales</li>
+            <li><strong>BAB VII</strong> &mdash; Manajemen Pembayaran & Kwitansi</li>
+            <li><strong>BAB VIII</strong> &mdash; Pemecahan Masalah (Troubleshooting)</li>
+            <li><strong>BAB IX</strong> &mdash; Keamanan & Backup</li>
+            <li><strong>Lampiran</strong> &mdash; Struktur Database & Login Default</li>
+        </ul>
+    </div>
+</div>
+
+<!-- BAB I -->
+<div class="page page-break">
+    <h1>BAB I &mdash; Pengenalan Sistem</h1>
+
+    <h2>1.1 Apa itu Sistem Alfadh Umrah?</h2>
+    <p>Sistem <strong>Alfadh Umrah</strong> adalah aplikasi web berbasis PHP dan MySQL yang dirancang khusus untuk <strong>PT. Alfadh Berkah Haramain</strong> guna memantau pembayaran jamaah umrah secara real-time. Aplikasi ini mendukung dua metode pembayaran: <strong>Lunas</strong> (sekali bayar) dan <strong>Bertahap</strong> (DP + Cicilan + Pelunasan).</p>
+
+    <h2>1.2 Fitur Utama</h2>
+    <table>
+        <tr><th>Fitur</th><th>Keterangan</th></tr>
+        <tr><td>Dashboard Real-Time</td><td>Grafik pemasukan, statistik jamaah, performa sales</td></tr>
+        <tr><td>Manajemen Paket</td><td>Kelola paket umrah dengan harga, durasi, kuota, fasilitas</td></tr>
+        <tr><td>Manajemen Jamaah</td><td>Data lengkap jamaah dengan progress pembayaran visual</td></tr>
+        <tr><td>Kwitansi Otomatis</td><td>Generate nomor kwitansi unik (KWT-YYYYMMDD-XXXX)</td></tr>
+        <tr><td>Laporan Keuangan</td><td>Filter per periode, paket, sales, status bayar</td></tr>
+        <tr><td>Multi User</td><td>Role Admin (super user) dan Sales (input kwitansi)</td></tr>
+        <tr><td>Cetak Kwitansi</td><td>Format resmi dengan watermark, stamp, dan terbilang</td></tr>
+    </table>
+
+    <h2>1.3 Arsitektur Teknologi</h2>
+    <div class="tip">
+        <strong>Stack Teknologi:</strong><br>
+        <strong>Backend:</strong> PHP 8.x Native (tanpa framework)<br>
+        <strong>Database:</strong> MySQL 5.7+ / MariaDB 10.3+<br>
+        <strong>Frontend:</strong> Bootstrap 5.3, Chart.js, Font Awesome 6<br>
+        <strong>Server:</strong> Apache (via XAMPP/MAMP/LAMPP)
+    </div>
+
+    <h2>1.4 Persyaratan Sistem Minimum</h2>
+    <table>
+        <tr><th>Komponen</th><th>Windows</th><th>macOS</th><th>Linux</th></tr>
+        <tr><td>OS Version</td><td>Windows 10/11</td><td>macOS 10.14+</td><td>Ubuntu 20.04+ / Debian 10+</td></tr>
+        <tr><td>RAM</td><td>4 GB</td><td>4 GB</td><td>2 GB</td></tr>
+        <tr><td>Storage</td><td>500 MB</td><td>500 MB</td><td>500 MB</td></tr>
+        <tr><td>Browser</td><td>Chrome/Firefox/Edge</td><td>Safari/Chrome</td><td>Firefox/Chrome</td></tr>
+        <tr><td>PHP</td><td>8.0+</td><td>8.0+</td><td>8.0+</td></tr>
+        <tr><td>MySQL</td><td>5.7+ / MariaDB</td><td>5.7+ / MariaDB</td><td>5.7+ / MariaDB</td></tr>
+    </table>
+</div>
+
+<!-- BAB II -->
+<div class="page page-break">
+    <h1>BAB II &mdash; Instalasi di Windows (XAMPP)</h1>
+
+    <h2>2.1 Download XAMPP</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Kunjungi website Apache Friends:</strong><br>
+            Buka browser dan akses <code>https://www.apachefriends.org</code><br>
+            Download <strong>XAMPP for Windows</strong> versi terbaru (PHP 8.x).
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <strong>Jalankan Installer:</strong><br>
+            Klik dua kali file <code>xampp-windows-x64-xxx-installer.exe</code><br>
+            Pilih komponen: <strong>Apache</strong>, <strong>MySQL</strong>, <strong>PHP</strong>, dan <strong>phpMyAdmin</strong>.<br>
+            Folder instalasi default: <code>C:\xampp</code>
+        </div>
+    </div>
+
+    <h2>2.2 Menjalankan XAMPP</h2>
+    <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <strong>Buka XAMPP Control Panel:</strong><br>
+            Klik Start Menu → XAMPP → XAMPP Control Panel<br>
+            Klik tombol <strong>Start</strong> pada modul <strong>Apache</strong> dan <strong>MySQL</strong>.<br>
+            Pastikan kedua modul berjalan (warna hijau / running).
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Catatan Firewall:</strong> Jika Windows Defender atau antivirus memblok Apache, klik <strong>Allow Access</strong> pada notifikasi yang muncul.
+    </div>
+
+    <h2>2.3 Menempatkan File Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+            <strong>Extract File ZIP:</strong><br>
+            Extract <code>alfadh-umrah-app.zip</code> ke folder:<br>
+            <code>C:\xampp\htdocs\alfadh-umrah-app\</code><br>
+            Pastikan struktur folder seperti berikut:<br>
+            <code>C:\xampp\htdocs\alfadh-umrah-app\index.php</code><br>
+            <code>C:\xampp\htdocs\alfadh-umrah-app\alfadh_umrah.sql</code>
+        </div>
+    </div>
+
+    <h2>2.4 Import Database</h2>
+    <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+            <strong>Buka phpMyAdmin:</strong><br>
+            Buka browser → ketik <code>http://localhost/phpmyadmin</code><br>
+            Klik menu <strong>Import</strong> di bagian atas.<br>
+            Klik <strong>Choose File</strong> → pilih file <code>alfadh_umrah.sql</code><br>
+            Klik tombol <strong>Go</strong> di bagian bawah.<br>
+            Database <code>alfadh_umrah</code> akan terbuat otomatis dengan data dummy.
+        </div>
+    </div>
+
+    <h2>2.5 Konfigurasi Database (Opsional)</h2>
+    <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+            <strong>Edit file konfigurasi:</strong><br>
+            Buka file <code>C:\xampp\htdocs\alfadh-umrah-app\includes\config.php</code><br>
+            Jika MySQL Anda memiliki password, ubah baris:<br>
+            <code>define('DB_PASS', '');</code> → <code>define('DB_PASS', 'password_anda');</code><br>
+            <strong>Simpan</strong> file (Ctrl + S).
+        </div>
+    </div>
+
+    <h2>2.6 Mengakses Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+            <strong>Buka Aplikasi:</strong><br>
+            Buka browser → ketik <code>http://localhost/alfadh-umrah-app/</code><br>
+            Halaman login akan muncul.<br>
+            Login dengan akun default (lihat Lampiran).
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>Shortcut:</strong> Anda bisa membuat shortcut di Desktop yang mengarah ke <code>http://localhost/alfadh-umrah-app/</code> untuk akses cepat.
+    </div>
+</div>
+
+<!-- BAB III -->
+<div class="page page-break">
+    <h1>BAB III &mdash; Instalasi di macOS (MAMP)</h1>
+
+    <h2>3.1 Download MAMP</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Kunjungi Website MAMP:</strong><br>
+            Akses <code>https://www.mamp.info</code><br>
+            Download <strong>MAMP (bukan MAMP PRO)</strong> versi terbaru.<br>
+            File download biasanya bernama <code>MAMP_MAMP_PRO_6.x.pkg</code>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <strong>Instalasi MAMP:</strong><br>
+            Klik dua kali file <code>.pkg</code> → ikuti wizard instalasi.<br>
+            Default folder aplikasi: <code>/Applications/MAMP/</code><br>
+            Default folder htdocs: <code>/Applications/MAMP/htdocs/</code>
+        </div>
+    </div>
+
+    <h2>3.2 Menjalankan MAMP</h2>
+    <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <strong>Jalankan Server:</strong><br>
+            Buka <strong>MAMP</strong> dari Applications.<br>
+            Klik tombol <strong>Start Servers</strong>.<br>
+            Apache dan MySQL akan berjalan (lampu indikator hijau).<br>
+            Browser akan terbuka otomatis ke <code>http://localhost:8888/MAMP/</code>
+        </div>
+    </div>
+
+    <h2>3.3 Menempatkan File Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+            <strong>Copy File:</strong><br>
+            Extract <code>alfadh-umrah-app.zip</code> ke:<br>
+            <code>/Applications/MAMP/htdocs/alfadh-umrah-app/</code><br>
+            (Buka Finder → Tekan <code>Cmd + Shift + G</code> → ketik path di atas)
+        </div>
+    </div>
+
+    <h2>3.4 Import Database</h2>
+    <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+            <strong>Buka phpMyAdmin MAMP:</strong><br>
+            Akses <code>http://localhost:8888/phpMyAdmin/</code><br>
+            Klik <strong>Import</strong> → pilih file <code>alfadh_umrah.sql</code> → klik <strong>Go</strong>.<br>
+            <strong>Catatan:</strong> Port MySQL MAMP default adalah <code>8889</code>, bukan <code>3306</code>.
+        </div>
+    </div>
+
+    <h2>3.5 Konfigurasi Port (Penting!)</h2>
+    <div class="warning">
+        <strong>Perhatian:</strong> MAMP menggunakan port berbeda dari XAMPP. Anda harus mengubah konfigurasi database.
+    </div>
+    <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+            <strong>Edit Config:</strong><br>
+            Buka <code>/Applications/MAMP/htdocs/alfadh-umrah-app/includes/config.php</code><br>
+            Ubah baris:<br>
+            <code>define('DB_HOST', 'localhost');</code><br>
+            Menjadi:<br>
+            <code>define('DB_HOST', 'localhost:8889');</code><br>
+            Jika menggunakan password MySQL MAMP, ubah juga <code>DB_PASS</code>.<br>
+            Default MAMP: user <code>root</code>, password <code>root</code>.
+        </div>
+    </div>
+
+    <h2>3.6 Mengakses Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+            <strong>Buka Browser:</strong><br>
+            Ketik <code>http://localhost:8888/alfadh-umrah-app/</code><br>
+            Halaman login akan muncul.
+        </div>
+    </div>
+</div>
+
+<!-- BAB IV -->
+<div class="page page-break">
+    <h1>BAB IV &mdash; Instalasi di Linux (LAMPP / XAMPP)</h1>
+
+    <h2>4.1 Instalasi XAMPP di Linux</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Download XAMPP for Linux:</strong><br>
+            <code>wget https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run</code><br>
+            Atau download dari <code>https://www.apachefriends.org</code>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <strong>Berikan Permission & Install:</strong><br>
+            Buka Terminal (Ctrl + Alt + T)<br>
+            <code>cd ~/Downloads</code><br>
+            <code>chmod +x xampp-linux-x64-*.run</code><br>
+            <code>sudo ./xampp-linux-x64-*.run</code><br>
+            Ikuti wizard instalasi GUI yang muncul.
+        </div>
+    </div>
+
+    <h2>4.2 Menjalankan XAMPP</h2>
+    <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <strong>Start Server:</strong><br>
+            <code>sudo /opt/lampp/lampp start</code><br>
+            Untuk menghentikan:<br>
+            <code>sudo /opt/lampp/lampp stop</code><br>
+            Untuk restart:<br>
+            <code>sudo /opt/lampp/lampp restart</code>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Permission Folder:</strong> Jika terjadi error permission saat extract file ke htdocs, jalankan:<br>
+        <code>sudo chmod 777 -R /opt/lampp/htdocs/</code>
+    </div>
+
+    <h2>4.3 Menempatkan File Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+            <strong>Extract ke htdocs:</strong><br>
+            <code>sudo unzip alfadh-umrah-app.zip -d /opt/lampp/htdocs/</code><br>
+            Atau gunakan file manager dengan <code>sudo</code>:<br>
+            <code>sudo nautilus /opt/lampp/htdocs/</code> (Ubuntu)<br>
+            <code>sudo dolphin /opt/lampp/htdocs/</code> (KDE)
+        </div>
+    </div>
+
+    <h2>4.4 Import Database</h2>
+    <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+            <strong>Via phpMyAdmin:</strong><br>
+            Buka browser → <code>http://localhost/phpmyadmin</code><br>
+            Klik <strong>Import</strong> → pilih <code>alfadh_umrah.sql</code> → <strong>Go</strong>.<br><br>
+            <strong>Alternatif via Terminal:</strong><br>
+            <code>sudo /opt/lampp/bin/mysql -u root -p</code><br>
+            <code>CREATE DATABASE alfadh_umrah;</code><br>
+            <code>USE alfadh_umrah;</code><br>
+            <code>SOURCE /opt/lampp/htdocs/alfadh-umrah-app/alfadh_umrah.sql;</code>
+        </div>
+    </div>
+
+    <h2>4.5 Konfigurasi (Jika Diperlukan)</h2>
+    <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+            <strong>Edit Config:</strong><br>
+            <code>sudo nano /opt/lampp/htdocs/alfadh-umrah-app/includes/config.php</code><br>
+            Default XAMPP Linux tidak memiliki password MySQL (kosong).<br>
+            Jika Anda mengubahnya, sesuaikan <code>DB_PASS</code>.<br>
+            Tekan <code>Ctrl + X</code> → <code>Y</code> → <code>Enter</code> untuk menyimpan.
+        </div>
+    </div>
+
+    <h2>4.6 Mengakses Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+            <strong>Buka Browser:</strong><br>
+            <code>http://localhost/alfadh-umrah-app/</code><br>
+            Jika menggunakan port berbeda, sesuaikan URL-nya.
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>Auto-start XAMPP:</strong> Tambahkan ke startup dengan mengedit <code>sudo nano /etc/rc.local</code> dan tambahkan baris <code>/opt/lampp/lampp start</code> sebelum <code>exit 0</code>.
+    </div>
+</div>
+
+<!-- BAB V -->
+<div class="page page-break">
+    <h1>BAB V &mdash; Panduan Admin (Super User)</h1>
+    <div class="role-badge admin">ROLE: ADMINISTRATOR</div>
+
+    <h2>5.1 Login sebagai Admin</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            Buka aplikasi di browser.<br>
+            Masukkan <strong>Username:</strong> <code>admin</code><br>
+            Masukkan <strong>Password:</strong> <code>password</code><br>
+            Klik tombol <strong>MASUK</strong>.
+        </div>
+    </div>
+
+    <h2>5.2 Dashboard Admin</h2>
+    <p>Setelah login, Anda akan melihat <strong>Dashboard</strong> dengan informasi:</p>
+    <ul>
+        <li><strong>Total Jamaah:</strong> Jumlah seluruh jamaah terdaftar</li>
+        <li><strong>Jamaah Lunas:</strong> Yang sudah membayar penuh</li>
+        <li><strong>Pembayaran Bertahap:</strong> Yang masih mencicil</li>
+        <li><strong>Total Pemasukan:</strong> Seluruh uang masuk dari pembayaran</li>
+    </ul>
+    <p>Dashboard juga menampilkan <strong>grafik batang</strong> pemasukan per paket dan <strong>grafik donut</strong> status pembayaran.</p>
+
+    <h2>5.3 Manajemen Paket Umrah</h2>
+    <h3>Menambah Paket Baru</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Paket Umrah</strong> di sidebar kiri.<br>
+            Klik tombol <strong>+ Tambah Paket</strong>.<br>
+            Isi form:
+            <ul>
+                <li><strong>Nama Paket:</strong> Contoh: "Umrah Reguler Ramadhan 2026"</li>
+                <li><strong>Kode Paket:</strong> Contoh: "UMR-RAM-001" (unik, tidak boleh sama)</li>
+                <li><strong>Harga:</strong> Angka tanpa titik/koma, contoh: 35000000</li>
+                <li><strong>Durasi:</strong> Jumlah hari, contoh: 12</li>
+                <li><strong>Keberangkatan:</strong> Tanggal berangkat</li>
+                <li><strong>Kamar:</strong> Quad (4 org), Triple (3 org), Double (2 org)</li>
+                <li><strong>Kuota:</strong> Maksimal jamaah, contoh: 100</li>
+                <li><strong>Fasilitas:</strong> Tiket, hotel, makan, bus, dll</li>
+            </ul>
+            Klik <strong>Simpan</strong>.
+        </div>
+    </div>
+
+    <h3>Mengedit & Menghapus Paket</h3>
+    <div class="step">
+        <div class="step-num">B</div>
+        <div class="step-content">
+            Di tabel daftar paket, klik ikon <strong>pensil (edit)</strong> untuk mengubah data.<br>
+            Klik ikon <strong>tong sampah (hapus)</strong> untuk menghapus paket.<br>
+            <div class="warning">
+                <strong>Hati-hati:</strong> Menghapus paket akan mempengaruhi data jamaah yang terdaftar di paket tersebut!
+            </div>
+        </div>
+    </div>
+
+    <h2>5.4 Manajemen Data Jamaah</h2>
+    <h3>Menambah Jamaah</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Data Jamaah</strong> → <strong>+ Tambah Jamaah</strong>.<br>
+            Isi data lengkap:
+            <ul>
+                <li><strong>Kode Jamaah:</strong> Format unik, contoh: "JMH-001"</li>
+                <li><strong>Nama Lengkap:</strong> Nama sesuai KTP</li>
+                <li><strong>Jenis Kelamin, TTL, No. KTP, Passport</strong></li>
+                <li><strong>Alamat & Kontak:</strong> Untuk komunikasi</li>
+                <li><strong>Paket Umrah:</strong> Pilih dari daftar paket aktif</li>
+                <li><strong>Sales:</strong> Petugas yang menangani jamaah ini</li>
+                <li><strong>Metode Bayar:</strong> Pilih "Lunas" atau "Bertahap"</li>
+            </ul>
+            Klik <strong>Simpan</strong>. Harga paket akan otomatis terisi.
+        </div>
+    </div>
+
+    <h3>Memantau Progress Pembayaran</h3>
+    <p>Di tabel jamaah, terdapat kolom <strong>Progress</strong> berupa bar hijau/kuning yang menunjukkan persentase pembayaran:</p>
+    <ul>
+        <li><span style="color:#28a745;">■ Hijau</span> = Lunas atau mendekati lunas</li>
+        <li><span style="color:#ffc107;">■ Kuning</span> = Masih dalam proses cicilan</li>
+    </ul>
+    <p>Kolom <strong>Sisa</strong> menampilkan nominal yang masih harus dibayar (merah = ada tunggakan, hijau = sudah lunas).</p>
+
+    <h2>5.5 Manajemen Pembayaran</h2>
+    <h3>Input Pembayaran</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Pembayaran</strong>.<br>
+            Di bagian kiri, pilih <strong>Jamaah</strong> dari dropdown.<br>
+            Info otomatis muncul: Harga Paket, Total Terbayar, Sisa Pembayaran.<br>
+            Isi form pembayaran:
+            <ul>
+                <li><strong>Tanggal Bayar:</strong> Default hari ini</li>
+                <li><strong>Jumlah Bayar:</strong> Nominal yang dibayarkan</li>
+                <li><strong>Jenis:</strong> DP / Cicilan / Pelunasan / Lunas</li>
+                <li><strong>Cicilan Ke-:</strong> Isi jika pembayaran cicilan (0 untuk DP/lunas)</li>
+                <li><strong>Metode:</strong> Transfer / Cash / Debit</li>
+                <li><strong>Keterangan:</strong> Catatan tambahan</li>
+            </ul>
+            Klik <strong>Simpan Pembayaran</strong>. Nomor kwitansi akan generate otomatis.
+        </div>
+    </div>
+
+    <h3>Cetak Kwitansi</h3>
+    <div class="step">
+        <div class="step-num">B</div>
+        <div class="step-content">
+            Di tabel riwayat pembayaran, klik ikon <strong>printer</strong>.<br>
+            Halaman kwitansi akan terbuka di tab baru.<br>
+            Klik tombol <strong>Cetak Kwitansi</strong> atau tekan <code>Ctrl + P</code>.<br>
+            Kwitansi memuat: watermark, stamp "LUNAS", terbilang, dan tanda tangan.
+        </div>
+    </div>
+
+    <h2>5.6 Laporan & Rekapitulasi</h2>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Laporan</strong>.<br>
+            Gunakan <strong>Filter</strong> untuk menyaring data:
+            <ul>
+                <li><strong>Paket:</strong> Pilih paket tertentu atau semua</li>
+                <li><strong>Sales:</strong> Filter berdasarkan petugas sales</li>
+                <li><strong>Status Bayar:</strong> Lunas / Bertahap</li>
+                <li><strong>Periode:</strong> Rentang tanggal pembayaran</li>
+            </ul>
+            Klik <strong>Filter</strong> untuk menerapkan.<br>
+            Klik <strong>Cetak</strong> untuk print laporan (tombol print browser).
+        </div>
+    </div>
+
+    <h2>5.7 Manajemen Sales</h2>
+    <h3>Menambah Sales Baru</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Manajemen Sales</strong> → <strong>+ Tambah Sales</strong>.<br>
+            Isi form:
+            <ul>
+                <li><strong>Nama Lengkap:</strong> Nama sales</li>
+                <li><strong>Username:</strong> Untuk login (unik)</li>
+                <li><strong>Password:</strong> Default "password" (bisa diubah nanti)</li>
+                <li><strong>No. HP & Email:</strong> Kontak sales</li>
+                <li><strong>Status:</strong> Aktif / Nonaktif</li>
+            </ul>
+            Klik <strong>Simpan</strong>. Sales bisa langsung login dengan username tersebut.
+        </div>
+    </div>
+
+    <h3>Melihat Performa Sales</h3>
+    <p>Tabel sales menampilkan:</p>
+    <ul>
+        <li><strong>Jamaah:</strong> Berapa jamaah yang ditangani</li>
+        <li><strong>Penjualan:</strong> Total uang masuk dari sales tersebut</li>
+    </ul>
+    <p>Data ini juga tampil di Dashboard Admin pada bagian "Performa Sales".</p>
+
+    <div class="tip">
+        <strong>Tips Admin:</strong> Rutin cek menu Laporan setiap minggu untuk memantau cash flow. Nonaktifkan sales yang tidak aktif agar tidak bisa login.
+    </div>
+</div>
+
+<!-- BAB VI -->
+<div class="page page-break">
+    <h1>BAB VI &mdash; Panduan Sales</h1>
+    <div class="role-badge sales">ROLE: SALES / PETUGAS</div>
+
+    <h2>6.1 Login sebagai Sales</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            Buka aplikasi di browser.<br>
+            Masukkan <strong>Username</strong> dan <strong>Password</strong> yang diberikan admin.<br>
+            Contoh: <code>sales1</code> / <code>password</code><br>
+            Klik <strong>MASUK</strong>.
+        </div>
+    </div>
+
+    <h2>6.2 Dashboard Sales</h2>
+    <p>Setelah login, tampilan Dashboard Sales menunjukkan:</p>
+    <ul>
+        <li><strong>Jamaah Saya:</strong> Total jamaah yang ditangani</li>
+        <li><strong>Total Penjualan:</strong> Uang masuk dari transaksi Anda</li>
+        <li><strong>Transaksi Hari Ini:</strong> Berapa kwitansi dibuat hari ini</li>
+    </ul>
+    <p>Di bawahnya ada daftar jamaah dengan progress bar pembayaran dan riwayat kwitansi terbaru.</p>
+
+    <h2>6.3 Melihat Jamaah</h2>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Jamaah Saya</strong>.<br>
+            Tabel menampilkan semua jamaah yang ditangani.<br>
+            Perhatikan kolom:
+            <ul>
+                <li><strong>Progress:</strong> Persentase pembayaran (visual bar)</li>
+                <li><strong>Sisa:</strong> Nominal yang belum dibayar</li>
+                <li><strong>Status:</strong> Lunas (hijau) atau Bertahap (kuning)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6.4 Membuat Kwitansi Pembayaran</h2>
+    <p>Ini adalah fitur utama Sales. Berikut langkah lengkapnya:</p>
+
+    <h3>Langkah 1: Pilih Jamaah</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Klik menu <strong>Buat Kwitansi</strong>.<br>
+            Di bagian kiri, pilih <strong>Jamaah</strong> dari dropdown.<br>
+            Informasi akan muncul otomatis:
+            <ul>
+                <li>Harga Paket (total yang harus dibayar)</li>
+                <li>Total Terbayar (sudah masuk berapa)</li>
+                <li><strong>Sisa Pembayaran</strong> (yang masih kurang)</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Langkah 2: Isi Detail Pembayaran</h3>
+    <div class="step">
+        <div class="step-num">B</div>
+        <div class="step-content">
+            <ul>
+                <li><strong>Tanggal Bayar:</strong> Default hari ini, bisa diubah jika bayar kemarin</li>
+                <li><strong>Jumlah Bayar:</strong> Nominal uang yang diterima (tidak boleh lebih dari sisa)</li>
+                <li><strong>Jenis Pembayaran:</strong>
+                    <ul>
+                        <li><strong>DP</strong> = Uang muka pertama kali</li>
+                        <li><strong>Cicilan</strong> = Pembayaran angsuran (isi "Cicilan Ke-")</li>
+                        <li><strong>Pelunasan</strong> = Pembayaran terakhir (masih ada sisa sedikit)</li>
+                        <li><strong>Lunas</strong> = Bayar penuh langsung</li>
+                    </ul>
+                </li>
+                <li><strong>Metode Bayar:</strong> Transfer Bank / Cash / Kartu Debit</li>
+                <li><strong>Keterangan:</strong> Contoh: "Transfer dari BCA" atau "Bayar di kantor"</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Langkah 3: Simpan & Cetak</h3>
+    <div class="step">
+        <div class="step-num">C</div>
+        <div class="step-content">
+            Klik tombol <strong>Buat Kwitansi</strong>.<br>
+            Sistem akan generate nomor unik, contoh: <code>KWT-20260521-0001</code><br>
+            Notifikasi sukses akan muncul dengan link <strong>Cetak Kwitansi</strong>.<br>
+            Klik link tersebut → halaman kwitansi terbuka.<br>
+            Klik <strong>Cetak Kwitansi</strong> atau tekan <code>Ctrl + P</code>.<br>
+            Berikan kwitansi cetak kepada jamaah sebagai bukti sah.
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Catatan Penting:</strong> Nomor kwitansi bersifat unik dan tidak bisa diubah. Pastikan data jumlah bayar sudah benar sebelum klik Simpan.
+    </div>
+
+    <h2>6.5 Melihat Riwayat Kwitansi</h2>
+    <div class="step">
+        <div class="step-num">D</div>
+        <div class="step-content">
+            Di halaman <strong>Buat Kwitansi</strong>, bagian kanan menampilkan riwayat kwitansi Anda.<br>
+            Klik ikon <strong>printer</strong> untuk mencetak ulang kwitansi yang pernah dibuat.<br>
+            Data terurut dari yang terbaru ke terlama.
+        </div>
+    </div>
+
+    <h2>6.6 Batasan Akses Sales</h2>
+    <p>Sales <strong>TIDAK BISA</strong>:</p>
+    <ul>
+        <li>❌ Menambah/mengedit paket umrah</li>
+        <li>❌ Menambah/menghapus data jamaah (hanya bisa melihat)</li>
+        <li>❌ Melihat data jamaah milik sales lain</li>
+        <li>❌ Mengakses laporan keuangan keseluruhan</li>
+        <li>❌ Mengelola user/admin lain</li>
+    </ul>
+    <p>Sales <strong>HANYA BISA</strong>:</p>
+    <ul>
+        <li>✅ Melihat jamaah yang ditangani</li>
+        <li>✅ Membuat kwitansi pembayaran</li>
+        <li>✅ Mencetak kwitansi</li>
+        <li>✅ Melihat riwayat kwitansi sendiri</li>
+    </ul>
+
+    <div class="tip">
+        <strong>Tips Sales:</strong> Selalu konfirmasi nominal bayar dengan jamaah sebelum input. Jika jamaah bayar lunas langsung, pilih jenis "Lunas" agar status otomatis berubah.
+    </div>
+</div>
+
+<!-- BAB VII -->
+<div class="page page-break">
+    <h1>BAB VII &mdash; Manajemen Pembayaran & Kwitansi</h1>
+
+    <h2>7.1 Alur Pembayaran Bertahap</h2>
+    <p>Berikut skenario pembayaran bertahap yang umum:</p>
+    <table>
+        <tr><th>Tahap</th><th>Jenis</th><th>Cicilan Ke-</th><th>Contoh Nominal</th></tr>
+        <tr><td>1</td><td>DP</td><td>0</td><td>Rp 10.000.000</td></tr>
+        <tr><td>2</td><td>Cicilan</td><td>2</td><td>Rp 5.000.000</td></tr>
+        <tr><td>3</td><td>Cicilan</td><td>3</td><td>Rp 5.000.000</td></tr>
+        <tr><td>4</td><td>Pelunasan</td><td>0</td><td>Rp 15.000.000</td></tr>
+    </table>
+    <p>Setelah total bayar = harga paket, status jamaah otomatis berubah menjadi <strong>Lunas</strong>.</p>
+
+    <h2>7.2 Struktur Nomor Kwitansi</h2>
+    <p>Format: <code>KWT-YYYYMMDD-XXXX</code></p>
+    <ul>
+        <li><strong>KWT</strong> = Prefix Kwitansi</li>
+        <li><strong>YYYYMMDD</strong> = Tanggal pembuatan (20260521)</li>
+        <li><strong>XXXX</strong> = Nomor urut per hari (0001, 0002, dst)</li>
+    </ul>
+    <p>Contoh: <code>KWT-20260521-0001</code> artinya kwitansi pertama dibuat tanggal 21 Mei 2026.</p>
+
+    <h2>7.3 Format Kwitansi Cetak</h2>
+    <p>Kwitansi yang tercetak memuat elemen resmi:</p>
+    <ul>
+        <li>Header: Nama PT, logo area, dan tagline</li>
+        <li>Nomor kwitansi yang unik</li>
+        <li>Data jamaah lengkap (nama, KTP, alamat, HP)</li>
+        <li>Nominal dalam angka dan terbilang (ejaan)</li>
+        <li>Detail paket umrah yang dibeli</li>
+        <li>Metode dan tanggal pembayaran</li>
+        <li>Tanda tangan jamaah dan petugas</li>
+        <li>Stamp "LUNAS TERBAYAR" berbentuk lingkaran</li>
+        <li>Watermark "ALFADH" transparan</li>
+        <li>Footer: informasi legal dan izin travel</li>
+    </ul>
+
+    <h2>7.4 Status Pembayaran Otomatis</h2>
+    <table>
+        <tr><th>Kondisi</th><th>Status Sistem</th><th>Warna Badge</th></tr>
+        <tr><td>Belum ada pembayaran</td><td>Bertahap</td><td>Kuning</td></tr>
+        <tr><td>Sudah bayar sebagian</td><td>Bertahap</td><td>Kuning</td></tr>
+        <tr><td>Total bayar >= Harga paket</td><td>Lunas (auto)</td><td>Hijau</td></tr>
+    </table>
+
+    <h2>7.5 Cara Cetak Ulang Kwitansi</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            Login sebagai Admin atau Sales.<br>
+            Buka menu <strong>Pembayaran</strong> (Admin) atau <strong>Buat Kwitansi</strong> (Sales).<br>
+            Cari kwitansi di tabel riwayat.<br>
+            Klik ikon <strong>printer</strong> → halaman kwitansi terbuka.<br>
+            Tekan <code>Ctrl + P</code> → pilih printer → Cetak.
+        </div>
+    </div>
+</div>
+
+<!-- BAB VIII -->
+<div class="page page-break">
+    <h1>BAB VIII &mdash; Pemecahan Masalah (Troubleshooting)</h1>
+
+    <h2>8.1 Tidak Bisa Login</h2>
+    <table>
+        <tr><th>Gejala</th><th>Penyebab</th><th>Solusi</th></tr>
+        <tr>
+            <td>"Username atau password salah"</td>
+            <td>Salah ketik / Caps Lock aktif</td>
+            <td>Periksa Caps Lock, coba lagi. Default: admin/password</td>
+        </tr>
+        <tr>
+            <td>"Akun dinonaktifkan"</td>
+            <td>Status user diubah ke "nonaktif"</td>
+            <td>Hubungi admin untuk mengaktifkan kembali</td>
+        </tr>
+        <tr>
+            <td>Halaman login terus muncul</td>
+            <td>Session/cookie browser bermasalah</td>
+            <td>Hapus cache browser (Ctrl + Shift + Delete) → pilih "Cookies"</td>
+        </tr>
+    </table>
+
+    <h2>8.2 Database Error / Koneksi Gagal</h2>
+    <table>
+        <tr><th>Gejala</th><th>Penyebab</th><th>Solusi</th></tr>
+        <tr>
+            <td>"Koneksi gagal"</td>
+            <td>MySQL tidak berjalan</td>
+            <td>Buka XAMPP Control Panel → Start MySQL</td>
+        </tr>
+        <tr>
+            <td>"Access denied"</td>
+            <td>Password MySQL salah</td>
+            <td>Edit <code>includes/config.php</code> → sesuaikan DB_PASS</td>
+        </tr>
+        <tr>
+            <td>"Unknown database"</td>
+            <td>Belum import SQL</td>
+            <td>Import ulang file <code>alfadh_umrah.sql</code> via phpMyAdmin</td>
+        </tr>
+        <tr>
+            <td>"Table doesn't exist"</td>
+            <td>Import SQL tidak lengkap</td>
+            <td>Hapus database → import ulang file SQL</td>
+        </tr>
+    </table>
+
+    <h2>8.3 Kwitansi Tidak Tercetak</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Periksa Popup Blocker:</strong><br>
+            Browser mungkin memblokir tab baru. Klik ikon popup blocker di address bar → Allow.<br><br>
+            <strong>Periksa Printer:</strong><br>
+            Pastikan printer terhubung dan tidak error.<br><br>
+            <strong>Cetak ke PDF:</strong><br>
+            Jika tidak ada printer, pilih "Save as PDF" di dialog print (Ctrl + P).
+        </div>
+    </div>
+
+    <h2>8.4 Tampilan Rusak / CSS Tidak Load</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Refresh Cache:</strong><br>
+            Tekan <code>Ctrl + F5</code> (Windows/Linux) atau <code>Cmd + Shift + R</code> (Mac).<br><br>
+            <strong>Cek Koneksi Internet:</strong><br>
+            Bootstrap dan Font Awesome di-load dari CDN. Pastikan internet aktif.<br>
+            Alternatif: Download file CSS/JS dan simpan di folder <code>assets/</code>.
+        </div>
+    </div>
+
+    <h2>8.5 Lupa Password Admin</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Reset via phpMyAdmin:</strong><br>
+            Buka <code>http://localhost/phpmyadmin</code><br>
+            Pilih database <strong>alfadh_umrah</strong> → tabel <strong>users</strong>.<br>
+            Cari user <strong>admin</strong> → klik <strong>Edit</strong>.<br>
+            Pada kolom <strong>password</strong>, masukkan:<br>
+            <code>$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi</code><br>
+            Ini adalah hash untuk password "password".<br>
+            Klik <strong>Go</strong> untuk menyimpan.
+        </div>
+    </div>
+
+    <h2>8.6 Error 404 / File Not Found</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Periksa Folder:</strong><br>
+            Pastikan folder aplikasi benar-benar di <code>htdocs/alfadh-umrah-app/</code><br>
+            <strong>Periksa URL:</strong><br>
+            Pastikan URL benar: <code>http://localhost/alfadh-umrah-app/</code><br>
+            (Jangan sampai ada typo atau spasi berlebih)<br>
+            <strong>Periksa Apache:</strong><br>
+            Pastikan Apache running di XAMPP Control Panel.
+        </div>
+    </div>
+</div>
+
+<!-- BAB IX -->
+<div class="page page-break">
+    <h1>BAB IX &mdash; Keamanan & Backup</h1>
+
+    <h2>9.1 Mengubah Password Default</h2>
+    <div class="warning">
+        <strong>PENTING:</strong> Segera ubah password default setelah pertama kali login untuk keamanan!
+    </div>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Untuk Admin:</strong><br>
+            Login sebagai admin → Manajemen Sales → Edit user admin (jika ada).<br>
+            Atau ubah langsung via phpMyAdmin di tabel <code>users</code>.<br><br>
+            <strong>Untuk Sales:</strong><br>
+            Hubungi admin untuk mengubah password Anda.<br>
+            Admin bisa edit password di menu <strong>Manajemen Sales</strong>.
+        </div>
+    </div>
+
+    <h2>9.2 Backup Database</h2>
+    <h3>Via phpMyAdmin (Cara Mudah)</h3>
+    <div class="step">
+        <div class="step-num">A</div>
+        <div class="step-content">
+            Buka <code>http://localhost/phpmyadmin</code><br>
+            Klik database <strong>alfadh_umrah</strong>.<br>
+            Klik tab <strong>Export</strong> → pilih <strong>Quick</strong> → format <strong>SQL</strong>.<br>
+            Klik <strong>Go</strong> → file SQL akan di-download.<br>
+            Simpan file backup di tempat aman (cloud/external drive).
+        </div>
+    </div>
+
+    <h3>Via Command Line (Cara Advanced)</h3>
+    <div class="step">
+        <div class="step-num">B</div>
+        <div class="step-content">
+            <strong>Windows (XAMPP):</strong><br>
+            Buka Command Prompt → jalankan:<br>
+            <code>cd C:\xampp\mysql\bin</code><br>
+            <code>mysqldump -u root alfadh_umrah > C:\backup\alfadh_backup_2026.sql</code><br><br>
+            <strong>Linux:</strong><br>
+            <code>sudo /opt/lampp/bin/mysqldump -u root alfadh_umrah > ~/backup/alfadh_backup.sql</code><br><br>
+            <strong>Mac (MAMP):</strong><br>
+            <code>/Applications/MAMP/Library/bin/mysqldump -u root -p alfadh_umrah > ~/Desktop/alfadh_backup.sql</code>
+        </div>
+    </div>
+
+    <h2>9.3 Restore Database</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Via phpMyAdmin:</strong><br>
+            Buka phpMyAdmin → klik database <strong>alfadh_umrah</strong>.<br>
+            Centang semua tabel → pilih <strong>Drop</strong> (hapus semua).<br>
+            Klik tab <strong>Import</strong> → pilih file backup SQL → <strong>Go</strong>.<br><br>
+            <strong>Via Command Line:</strong><br>
+            <code>mysql -u root alfadh_umrah < backup_file.sql</code>
+        </div>
+    </div>
+
+    <h2>9.4 Backup File Aplikasi</h2>
+    <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <strong>Windows:</strong><br>
+            Copy folder <code>C:\xampp\htdocs\alfadh-umrah-app\</code> ke flashdisk/cloud.<br><br>
+            <strong>Mac:</strong><br>
+            Copy folder <code>/Applications/MAMP/htdocs/alfadh-umrah-app/</code><br><br>
+            <strong>Linux:</strong><br>
+            <code>sudo cp -r /opt/lampp/htdocs/alfadh-umrah-app ~/backup/</code>
+        </div>
+    </div>
+
+    <h2>9.5 Keamanan yang Sudah Diterapkan</h2>
+    <table>
+        <tr><th>Aspek</th><th>Implementasi</th></tr>
+        <tr><td>Password</td><td>Hash bcrypt (password_hash PHP)</td></tr>
+        <tr><td>SQL Injection</td><td>Prepared statements semua query</td></tr>
+        <tr><td>Session</td><td>Validasi status user setiap request</td></tr>
+        <tr><td>Role Access</td><td>Pemisahan hak akses Admin vs Sales</td></tr>
+        <tr><td>Log Aktivitas</td><td>Semua aksi tercatat (user, aktivitas, IP, waktu)</td></tr>
+    </table>
+
+    <div class="tip">
+        <strong>Rekomendasi:</strong> Lakukan backup database <strong>minimal seminggu sekali</strong> atau setelah ada transaksi besar. Simpan backup di lokasi berbeda dari server (cloud/Google Drive).
+    </div>
+</div>
+
+<!-- LAMPIRAN -->
+<div class="page page-break">
+    <h1>Lampiran &mdash; Referensi Cepat</h1>
+
+    <h2>A. Login Default</h2>
+    <table>
+        <tr><th>Role</th><th>Username</th><th>Password</th><th>Keterangan</th></tr>
+        <tr><td>Administrator</td><td>admin</td><td>password</td><td>Full akses</td></tr>
+        <tr><td>Sales</td><td>sales1</td><td>password</td><td>Ahmad Fauzi</td></tr>
+        <tr><td>Sales</td><td>sales2</td><td>password</td><td>Budi Santoso</td></tr>
+        <tr><td>Sales</td><td>sales3</td><td>password</td><td>Citra Lestari</td></tr>
+    </table>
+
+    <h2>B. Struktur Tabel Database</h2>
+    <table>
+        <tr><th>Tabel</th><th>Fungsi</th></tr>
+        <tr><td>users</td><td>Data admin dan sales</td></tr>
+        <tr><td>paket_umrah</td><td>Daftar paket umrah</td></tr>
+        <tr><td>jamaah</td><td>Data jamaah & status bayar</td></tr>
+        <tr><td>pembayaran</td><td>Riwayat pembayaran & kwitansi</td></tr>
+        <tr><td>log_aktivitas</td><td>Catatan aktivitas user</td></tr>
+    </table>
+
+    <h2>C. Format Kwitansi</h2>
+    <p><code>KWT-[YYYYMMDD]-[XXXX]</code></p>
+    <p>Contoh: <code>KWT-20260521-0001</code></p>
+
+    <h2>D. Hotkey & Shortcut</h2>
+    <table>
+        <tr><th>Aksi</th><th>Windows/Linux</th><th>macOS</th></tr>
+        <tr><td>Cetak halaman</td><td>Ctrl + P</td><td>Cmd + P</td></tr>
+        <tr><td>Refresh cache</td><td>Ctrl + F5</td><td>Cmd + Shift + R</td></tr>
+        <tr><td>Hapus cache</td><td>Ctrl + Shift + Delete</td><td>Cmd + Shift + Delete</td></tr>
+        <tr><td>Cari di halaman</td><td>Ctrl + F</td><td>Cmd + F</td></tr>
+    </table>
+
+    <h2>E. Kontak & Dukungan</h2>
+    <div class="note">
+        <strong>PT. Alfadh Berkah Haramain</strong><br>
+        Email: info@alfadh.com<br>
+        Telepon: (021) 1234-5678<br>
+        Website: www.alfadh.com<br><br>
+        <strong>Tim IT:</strong><br>
+        Email: it@alfadh.com<br>
+        WhatsApp: 0812-3456-7890
+    </div>
+
+    <div class="footer">
+        <p><strong>PT. Alfadh Berkah Haramain</strong></p>
+        <p>Sistem Pemantauan Pembayaran Jamaah Umrah v1.0</p>
+        <p>Dokumen ini dibuat pada Mei 2026</p>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">
+            Dokumen ini adalah milik PT. Alfadh Berkah Haramain.<br>
+            Dilarang menyebarkan tanpa izin tertulis.
+        </p>
+    </div>
+</div>
+
+<div class="no-print" style="text-align: center; margin: 30px;">
+    <button onclick="window.print()" style="padding: 15px 40px; font-size: 1.1rem; background: #1a5f2a; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        🖨️ Cetak / Save as PDF
+    </button>
+    <p style="color: #666; margin-top: 10px;">Klik tombol di atas untuk mencetak buku ini atau simpan sebagai PDF</p>
+</div>
+
+</body>
+</html>
